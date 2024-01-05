@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
@@ -22,7 +23,15 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::view('dashboard', 'dashboard')
         ->name('dashboard');
+
+    Route::get('client', [ClientController::class, 'create'] )
+        ->name('clients.create');
+
+    Route::get('clients{client:uuid}', [ClientController::class, 'edit'] )
+        ->name('client.edit');
 });
+
+
 
 
 
