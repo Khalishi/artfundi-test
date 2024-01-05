@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Livewire\Volt\Volt;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware('guest')->group(function () {
+    Volt::route('/', 'pages.auth.login')
+        ->name('login');
 });
+
+Route::middleware('auth')->group(function () {
+    Route::view('dashboard', 'dashboard')
+        ->name('dashboard');
+});
+
+
+
+
