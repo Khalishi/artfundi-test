@@ -1,1 +1,44 @@
 @import "custom.scss";
+@import "../../node_modules/flatpickr/dist/flatpickr.min.css";
+
+.flatpickr-day.selected {
+    background: #E1551C;
+    box-shadow: none;
+    color: #fff;
+    border-color: #E1551C;
+}
+
+.custom-toggle-base {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.125rem;
+    border-radius: 9999px;
+    width: 3rem;
+    height: 1.75rem;
+    transition: background-color 200ms;
+    outline: none;
+    position: relative;
+}
+
+.custom-toggle {
+    background-color: #a0a0a0;
+}
+
+.custom-toggle--active {
+    background-color: #007bff;
+}
+
+.custom-toggle-circle {
+    background-color: white;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 5px, rgba(0, 0, 0, 0.1) 0px 1px 1px;
+    transition: transform 200ms;
+    position: absolute;
+    left: 0.125rem;
+}
+
+.custom-toggle--active .custom-toggle-circle {
+    transform: translateX(1.25rem);
+}
