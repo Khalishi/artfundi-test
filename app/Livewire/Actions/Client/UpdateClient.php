@@ -19,7 +19,7 @@ class UpdateClient
             'last_name' => ['required', 'string'],
             'email_address' => ['required', 'email', Rule::unique('clients')->ignore($client->id)],
             'telephone' => ['required', 'string'],
-            'status' => ['required', 'string'],
+            'status' => ['required', 'boolean'],
         ])->validate();
 
         return DB::transaction(function () use ($input, $client) {
@@ -30,7 +30,7 @@ class UpdateClient
                 'last_name' => $input['last_name'],
                 'email_address' => $input['email_address'],
                 'telephone' => $input['telephone'],
-                'status' => $input['status'],
+                'status' => (int) $input['status'],
             ]);
         });
     }

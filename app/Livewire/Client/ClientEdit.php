@@ -21,7 +21,7 @@ class ClientEdit extends Component
             'last_name' => $this->client->last_name,
             'email_address' => $this->client->email_address,
             'telephone' => $this->client->telephone,
-            'status' => $this->client->status,
+            'status' => (int) $this->client->status,
         ];
     }
 

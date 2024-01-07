@@ -18,14 +18,13 @@ class ClientFactory extends Factory
     public function definition(): array
     {
         return [
-            'uuid' => Str::uuid(),
             'id_number' => $this->faker->unique()->numberBetween(100000, 999999),
             'date_of_birth' => $this->faker->date(),
             'first_name' => $this->faker->firstName,
             'last_name' => $this->faker->lastName,
             'email_address' => $this->faker->unique()->safeEmail,
             'telephone' => $this->faker->phoneNumber,
-            'status' => $this->faker->randomElement(['active', 'inactive']),
+            'status' => $this->faker->boolean,
         ];
     }
 }

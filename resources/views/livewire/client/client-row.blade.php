@@ -6,7 +6,7 @@
     <td>{{ $client->email_address }}</td>
     <td>{{ $client->telephone }}</td>
     <td>
-        @if($client->status == 'active')
+        @if($client->status)
             <span class="badge text-bg-success">Active</span>
         @else
             <span class="badge text-bg-secondary">Inactive</span>

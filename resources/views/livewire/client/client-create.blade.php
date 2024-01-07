@@ -45,13 +45,11 @@
         </div>
 
         <!-- Status -->
-        <div>
-            <label for="status" class="form-label">Status</label>
-            <select class="form-select" awire:model="form.status" id="status">
-                <option value="active">Active</option>
-                <option value="inactive">Inactive</option>
-            </select>
-            <x-input-error :messages="$errors->get('status')" class="mt-2" />
+        <div class="mt-2">
+           <div>
+               <label for="telephone" class="form-label">Status</label>
+           </div>
+            <x-toggle wire:model="form.status"/>
         </div>
 
         <!-- Submit -->

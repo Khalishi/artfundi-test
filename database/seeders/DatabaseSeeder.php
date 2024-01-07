@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Client;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Client::factory()->count(50)->create();
+       User::truncate();
+
+         User::factory()->create([
+              'name' => 'Thanyani',
+              'email' => 'khalishisimon@gmail.com',
+             'password' => bcrypt('password'),
+            ]);
     }
 }
