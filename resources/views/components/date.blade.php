@@ -1,5 +1,5 @@
 <div x-data="{ value: @entangle($attributes->wire('model')), picker: undefined }"
-     x-init="flatpickr($refs.input,{minDate: 'today',dateFormat: 'Y-m-d'})"
+     x-init="flatpickr($refs.input,{dateFormat: 'Y-m-d'})"
      x-on:change="value = $event.target.value"
     class="input-group">
     <span class="input-group-text">

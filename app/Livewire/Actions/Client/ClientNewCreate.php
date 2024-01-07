@@ -18,7 +18,7 @@ class ClientNewCreate
             'last_name' => ['required', 'string'],
             'email_address' => ['required', 'email', 'unique:clients'],
             'telephone' => ['required', 'string'],
-            'status' => ['required', 'string'],
+            'status' => ['required', 'boolean'],
         ])->validate();
 
         return DB::transaction(function () use ($input) {
@@ -29,7 +29,7 @@ class ClientNewCreate
                 'last_name' => $input['last_name'],
                 'email_address' => $input['email_address'],
                 'telephone' => $input['telephone'],
-                'status' => $input['status'],
+                'status' => (int) $input['status'],
             ]);
         });
 

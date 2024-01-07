@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('email_address')->unique();
             $table->string('telephone')->unique();
-            $table->string('status')->default('active');
+            $table->boolean('status')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

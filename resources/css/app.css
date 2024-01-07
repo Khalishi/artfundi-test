@@ -8,37 +8,37 @@
     border-color: #E1551C;
 }
 
-.custom-toggle-base {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.125rem;
+
+/* Custom styles for the toggle switch */
+.toggle-switch-on {
+    background-color: #4ade80; /* A green color when toggle is on */
     border-radius: 9999px;
-    width: 3rem;
-    height: 1.75rem;
-    transition: background-color 200ms;
-    outline: none;
-    position: relative;
+    transition: background-color 0.3s ease;
 }
 
-.custom-toggle {
-    background-color: #a0a0a0;
+.toggle-switch-off {
+    background-color: #d1d5db; /* A gray color when toggle is off */
+    border-radius: 9999px;
+    transition: background-color 0.3s ease;
 }
 
-.custom-toggle--active {
-    background-color: #007bff;
+.toggle-knob {
+    width: 1.25rem; /* 20px */
+    height: 1.25rem; /* 20px */
+    border-radius: 9999px; /* Fully rounded */
+    transition: transform 0.3s ease;
 }
 
-.custom-toggle-circle {
-    background-color: white;
-    border-radius: 50%;
-    width: 1.5rem;
-    height: 1.5rem;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 5px, rgba(0, 0, 0, 0.1) 0px 1px 1px;
-    transition: transform 200ms;
-    position: absolute;
-    left: 0.125rem;
+/* Position the knob to the left or right */
+.toggle-switch-on .toggle-knob {
+    transform: translateX(1.25rem); /* Adjust as needed based on the size of your switch */
 }
 
-.custom-toggle--active .custom-toggle-circle {
-    transform: translateX(1.25rem);
+.toggle-switch-off .toggle-knob {
+    transform: translateX(0);
+}
+
+/* Bootstrap shadows */
+.shadow {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
 }

@@ -12,7 +12,7 @@
         <!-- Date of birth -->
         <div>
             <label for="date_of_birth" class="form-label">Date of birth</label>
-            <input class="form-control" wire:model="form.date_of_birth" id="date_of_birth" type="date" name="date_of_birth" required  >
+            <x-date class="form-control" wire:model="form.date_of_birth" id="date_of_birth"/>
             <x-input-error :messages="$errors->get('date_of_birth')" class="mt-2" />
         </div>
 
@@ -45,13 +45,11 @@
         </div>
 
         <!-- Status -->
-        <div>
-            <label for="status" class="form-label">Status</label>
-            <select class="form-select" awire:model="form.status" id="status">
-                <option value="active">Active</option>
-                <option value="inactive">Inactive</option>
-            </select>
-            <x-input-error :messages="$errors->get('status')" class="mt-2" />
+        <div class="mt-2">
+            <div>
+                <label for="telephone" class="form-label">Status</label>
+            </div>
+            <x-toggle wire:model="form.status"/>
         </div>
 
         <!-- Submit -->

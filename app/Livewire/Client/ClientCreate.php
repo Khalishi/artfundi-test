@@ -14,7 +14,7 @@ class ClientCreate extends Component
         'last_name' => '',
         'email_address' => '',
         'telephone' => '',
-        'status' => 'active',
+        'status' => 0,
     ];
 
     public function CreateClient(ClientNewCreate $creator)
